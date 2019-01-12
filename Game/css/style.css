@@ -1,0 +1,185 @@
+@font-face {
+  font-family: 'neuropol';
+  src: url('fonts/neuropol.woff') format('woff'),
+    url('fonts/neuropol.ttf') format('truetype');
+}
+html {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: inherit;
+  box-sizing: inherit;
+}
+
+body {
+  font-family: 'neuropol', sans-serif;
+  font-size: 1rem;
+  min-height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background: -webkit-gradient(
+    linear,
+    left top,
+    left bottom,
+    from(#eaf9f8),
+    to(#8cdcda)
+  );
+  background: -webkit-linear-gradient(#eaf9f8, #8cdcda);
+  background: -o-linear-gradient(#eaf9f8, #8cdcda);
+  background: linear-gradient(#eaf9f8, #8cdcda);
+  color: #4d4d4d;
+}
+
+.game-title {
+  margin: 20px;
+}
+
+.game-stats {
+  width: 500px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+.game-stats__level,
+.game-stats__score {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+  justify-content: space-around;
+  -webkit-box-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+}
+.game-stats__button {
+  font-family: inherit;
+  background-color: #8cdcda;
+  border: none;
+  border-radius: 5px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  line-height: 1rem;
+  cursor: pointer;
+  width: 100px;
+}
+
+.game-timer {
+  margin-top: 10px;
+  width: 550px;
+  background-color: #51cac7;
+  border-radius: 5px;
+}
+.game-timer__bar {
+  width: 100%;
+  height: 20px;
+  border-radius: 5px;
+  text-align: center;
+  line-height: 20px;
+  background-color: #8cdcda;
+  -webkit-box-shadow: #8cdcda 0px 0 10px;
+  box-shadow: #8cdcda 0px 0 10px;
+}
+
+.game-instruction__header {
+  text-align: center;
+  margin: 10px;
+}
+
+.game-board {
+  display: -ms-grid;
+  display: grid;
+  grid-gap: 20px;
+  padding: 20px;
+  -webkit-perspective: 600px;
+  perspective: 600px;
+  width: 600px;
+  height: 600px;
+}
+
+.card {
+  position: relative;
+  -webkit-transition: -webkit-transform 0.5s;
+  transition: -webkit-transform 0.5s;
+  -o-transition: transform 0.5s;
+  transition: transform 0.5s;
+  transition: transform 0.5s, -webkit-transform 0.5s;
+  -webkit-box-shadow: #f16a71dd 0px 0 10px;
+  box-shadow: #f16a71dd 0px 0 10px;
+  border-radius: 5px;
+  -webkit-transform: scale(1);
+  -ms-transform: scale(1);
+  transform: scale(1);
+  -webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  cursor: pointer;
+}
+.card--flipped {
+  -webkit-transform: rotateY(180deg);
+  transform: rotateY(180deg);
+}
+.card__face {
+  width: 100%;
+  height: 100%;
+  padding: 5px;
+  border-radius: 5px;
+  background-origin: content-box;
+  background-repeat: no-repeat;
+  position: absolute;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+.card__face--front {
+  background: #f16a70;
+  background-image: url('./icons/m.png');
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.card__face--back {
+  -webkit-transform: rotateY(180deg);
+  transform: rotateY(180deg);
+}
+.card.html5 .card__face--back {
+  background-image: url('./icons/html5.svg');
+}
+.card.css3 .card__face--back {
+  background-image: url('./icons/css3.svg');
+}
+.card.js .card__face--back {
+  background-image: url('./icons/js.svg');
+}
+.card.react .card__face--back {
+  background-image: url('./icons/react.svg');
+}
+.card.nodejs .card__face--back {
+  background-image: url('./icons/nodejs.svg');
+}
+.card.sass .card__face--back {
+  background-image: url('./icons/sass.svg');
+}
+.card.linkedin .card__face--back {
+  background-image: url('./icons/linkedin.svg');
+}
+.card.heroku .card__face--back {
+  background-image: url('./icons/heroku.svg');
+}
+.card.github .card__face--back {
+  background-image: url('./icons/github.svg');
+}
+.card.aws .card__face--back {
+  background-image: url('./icons/aws.svg');
+}
