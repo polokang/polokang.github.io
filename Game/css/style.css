@@ -101,14 +101,41 @@ body {
 }
 
 .game-board {
-  display: -ms-grid;
-  display: grid;
-  grid-gap: 20px;
-  padding: 20px;
-  -webkit-perspective: 600px;
-  perspective: 600px;
-  width: 600px;
-  height: 600px;
+    display: -ms-grid;
+    display: grid;
+    grid-gap: 20px;
+    padding: 20px;
+    
+    -webkit-perspective: 375px;
+    perspective: 375px;
+    width: 375px;
+    height: 375px;
+}
+
+@media (min-width: 400px) {
+  .game-board {
+    display: -ms-grid;
+    display: grid;
+    grid-gap: 20px;
+    padding: 20px;
+    -webkit-perspective: 400px;
+    perspective: 400px;
+    width: 400px;
+    height: 400px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .game-board {
+    display: -ms-grid;
+    display: grid;
+    grid-gap: 20px;
+    padding: 20px;
+    -webkit-perspective: 600px;
+    perspective: 600px;
+    width: 600px;
+    height: 600px;
+  }
 }
 
 .card {
